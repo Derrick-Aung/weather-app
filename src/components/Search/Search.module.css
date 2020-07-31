@@ -4,10 +4,15 @@
     padding: 0.5rem;
 }
 
+.searchBox form {
+    display: flex;
+}
+
 .searchBox input {
     background-color: inherit;
     border-width: 0;
-    color: #ffffff;
+    font-size: 1rem;
+    color: #03dac5;
 }
 .searchBox input:focus {
     outline: none;
