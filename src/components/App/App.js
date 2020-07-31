@@ -1,7 +1,15 @@
 import React from "react";
+import Search from "../Search/Search";
+import WeatherDetails from "../WeatherDetails/WeatherDetails";
+import styles from "./App.module.css";
 
-function App() {
-    return <div className="App">AOo</div>;
-}
+const App = () => {
+    return (
+        <div className={styles.mainContainer}>
+            <Search />
+            <WeatherDetails />
+        </div>
+    );
+};
 
 export default App;
