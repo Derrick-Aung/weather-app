@@ -5,6 +5,7 @@ import App from "./components/App/App";
 import { Provider } from "react-redux";
 import store from "./store";
 import { getWeatherData } from "./actions";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 // TODO make dynamic with geocoordinates
 const cityName = "melbourne";

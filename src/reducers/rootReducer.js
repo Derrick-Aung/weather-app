@@ -7,7 +7,7 @@ import {
 const initialState = {
     loading: false,
     error: false,
-    weather: null,
+    forecast: null,
 };
 
 export default (state = initialState, action) => {
@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
         case GET_WEATHER_SUCCESS:
             return {
                 ...state,
-                weather: action.payload,
+                forecast: action.payload,
                 loading: false,
                 error: false,
             };

@@ -1,0 +1,14 @@
+.searchBox {
+    background-color: #444950;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.searchBox input {
+    background-color: inherit;
+    border-width: 0;
+    color: #ffffff;
+}
+.searchBox input:focus {
+    outline: none;
+}
