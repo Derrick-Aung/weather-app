@@ -24,12 +24,33 @@
 }
 
 .imgContainer {
-    background-color: #d6b4ff;
+    position: relative;
     display: flex;
     justify-content: center;
     /* ignore parent padding */
     margin: 0 -1rem;
     margin-bottom: 1rem;
+    background-image: linear-gradient(
+            65deg,
+            rgba(50, 0, 168, 0.9),
+            rgb(112, 239, 222, 0.9)
+        ),
+        url("/images/scenery.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 360px;
+}
+
+.locationContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 30px;
+    top: 30px;
+}
+
+.locationContainer img {
+    width: 50px;
 }
 
 .muted {
@@ -39,4 +60,21 @@
 
 .textPrimary {
     font-size: 1.4rem;
+}
+
+.detailsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 40%;
+    }
 }
