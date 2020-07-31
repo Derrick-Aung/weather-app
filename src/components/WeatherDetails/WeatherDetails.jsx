@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./WeatherDetails.module.css";
 import { useSelector } from "react-redux";
+import { kelvinToCelsius, capitalizeFirstLetter } from "../../utility";
 
 const DetailComponent = ({ label, detail }) => {
     return (
@@ -30,9 +31,12 @@ const WeatherDetails = () => {
             <DetailComponent label="Weather" detail={weatherInfo.main} />
             <DetailComponent
                 label="Description"
-                detail={weatherInfo.description}
+                detail={capitalizeFirstLetter(weatherInfo.description)}
             />
-            <DetailComponent label="Temperature" detail={`${main.temp} °F`} />
+            <DetailComponent
+                label="Temperature"
+                detail={`${kelvinToCelsius(main.temp).toFixed(1)} °C`}
+            />
         </div>
     );
 };
