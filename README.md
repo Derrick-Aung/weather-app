@@ -18,3 +18,6 @@
 
 ## Live Demo
 http://ec2-13-210-217-207.ap-southeast-2.compute.amazonaws.com/
+
+## API Endpoint for stored search queries
+http://ec2-13-210-217-207.ap-southeast-2.compute.amazonaws.com/api/searches/
