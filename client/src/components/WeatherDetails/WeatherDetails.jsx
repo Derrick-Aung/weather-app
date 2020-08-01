@@ -75,7 +75,7 @@ const WeatherDetails = () => {
             </div>
             <div className={styles.detailsContainer}>
                 {details.map((d) => (
-                    <DetailComponent {...d} />
+                    <DetailComponent {...d} key={d.label} />
                 ))}
             </div>
         </div>
