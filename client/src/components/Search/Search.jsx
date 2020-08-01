@@ -10,6 +10,7 @@ const Search = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (city === "") return;
         dispatch(getWeatherData(city));
     };
 
