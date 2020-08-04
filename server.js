@@ -1,32 +1,24 @@
 const express = require("express");
 // Allows us to create global variables
 const dotenv = require("dotenv");
-const searches = require("./routes/searches");
 const morgan = require("morgan");
+const cors = require("cors");
+const searches = require("./routes/searches");
 const connectDB = require("./config/db");
 
 dotenv.config({ path: "./config/config.env" });
 const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(express.json());
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-
-    res.setHeader(
-        "Access-Control-Allow-Headers",
-        "X-Requested-With,content-type"
-    );
-
-    next();
-});
+app.use(cors());
 
 connectDB();
 
 if (process.env.NODE_ENV == "development") {
     app.use(morgan("dev"));
 }
+
+app.use("/api/searches", searches);
 
 if (process.env.NODE_ENV == "production") {
     app.use(express.static("client/build"));
@@ -35,7 +27,6 @@ if (process.env.NODE_ENV == "production") {
     );
 }
 
-app.use("/api/searches", searches);
 app.listen(
     PORT,
     console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`)
